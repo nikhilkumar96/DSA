@@ -36,47 +36,49 @@ Output 2:
 
 
 '''
+
+
 def generateMatrix(A):
-    l=0
-    r=A-1
-    u=0
-    d=A-1
-    i=0
-    j=0
+    l = 0
+    r = A - 1
+    u = 0
+    d = A - 1
+    i = 0
+    j = 0
     flag = 'right'
     mat = [[0 for p in range(A)] for q in range(A)]
-    n=1
-    while n<=A**2:
+    n = 1
+    while n <= A ** 2:
         mat[i][j] = n
         print(mat)
-        n+=1
+        n += 1
         if flag == 'right':
-            if j<r:
-                j+=1
+            if j < r:
+                j += 1
             else:
-                u+=1
-                i+=1
+                u += 1
+                i += 1
                 flag = 'down'
         elif flag == 'down':
-            if i<d:
-                i+=1
+            if i < d:
+                i += 1
             else:
-                r-=1
-                j-=1
+                r -= 1
+                j -= 1
                 flag = 'left'
         elif flag == 'left':
-            if j>l:
-                j-=1
+            if j > l:
+                j -= 1
             else:
-                d-=1
-                i-=1
+                d -= 1
+                i -= 1
                 flag = 'up'
         else:
-            if i>u:
-                i-=1
+            if i > u:
+                i -= 1
             else:
-                l+=1
-                j+=1
+                l += 1
+                j += 1
                 flag = 'right'
     return mat
 
