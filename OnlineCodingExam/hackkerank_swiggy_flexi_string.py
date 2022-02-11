@@ -48,10 +48,11 @@ def flexi(stri, graph):
     visited[stri[0]] = 1
     while myque:
         temp = myque.popleft()
-        for child in graph[temp]:
-            if visited[child] ==0:
-                visited[child] =1
-                myque.append(child)
+        if temp in graph.keys():
+            for child in graph[temp]:
+                if child in visited.keys() and visited[child] ==0:
+                    visited[child] =1
+                    myque.append(child)
 
     for k,v in visited.items():
         if v==0:
