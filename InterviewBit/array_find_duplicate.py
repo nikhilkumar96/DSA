@@ -1,4 +1,4 @@
-'''
+"""
 
 https://www.interviewbit.com/problems/find-duplicate-in-array/
 
@@ -17,7 +17,7 @@ If there are multiple possible answers ( like in the sample case above ), output
 
 If there is no duplicate, output -1
 
-'''
+"""
 
 
 class Solution:
@@ -35,8 +35,7 @@ class Solution:
 
 print(Solution().repeatedNumber([1, 4, 4, 1, 3]))
 
-
-'''
+"""
 Fastest Solution
 
 class Solution:
@@ -48,4 +47,4 @@ class Solution:
         sumOfRange = int(n * (n + 1) / 2) - n
         return sumOfList - sumOfRange
 
-'''
+"""
