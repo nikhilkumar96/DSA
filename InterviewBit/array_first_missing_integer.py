@@ -35,8 +35,6 @@ class Solution:
 
 print(Solution().firstMissingPositive([1, 2, 3]))
 
-
-
 """
 Fastest Solution
 
