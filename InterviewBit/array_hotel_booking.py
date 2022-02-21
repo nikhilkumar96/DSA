@@ -1,4 +1,4 @@
-'''
+"""
 
 https://www.interviewbit.com/problems/hotel-bookings-possible/
 
@@ -45,7 +45,7 @@ Example Explanation
 Explanation 1:
 
  At day = 5, there are 2 guests in the hotel. But I have only one room
-'''
+"""
 
 
 class Solution:
@@ -84,7 +84,7 @@ C = 10
 
 print(Solution().hotel(A, B, C))
 
-'''
+"""
 Fastest Solution
 
 class Solution:
@@ -102,4 +102,4 @@ class Solution:
         else:
             return True
 
-'''
+"""
