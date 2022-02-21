@@ -1,4 +1,4 @@
-'''
+"""
 
 https://www.interviewbit.com/problems/largest-number/
 
@@ -10,7 +10,7 @@ Given [3, 30, 34, 5, 9], the largest formed number is 9534330.
 
 Note: The result may be very large, so you need to return a string instead of an integer.
 
-'''
+"""
 
 from functools import cmp_to_key
 
@@ -36,11 +36,7 @@ class Solution:
 
 print(Solution().largestNumber([8, 89]))
 
-
-
-
-
-'''
+"""
 Fastest Solution
 
 class K:
@@ -57,4 +53,4 @@ class Solution:
         A = sorted(A, key=K, reverse=True)
         return str(int(''.join([str(s) for s in A])))
 
-'''
+"""
