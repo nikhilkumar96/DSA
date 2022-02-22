@@ -1,4 +1,4 @@
-'''
+"""
 
 https://www.interviewbit.com/problems/anti-diagonals/
 
@@ -32,7 +32,7 @@ Return the following:
   [4]
 ]
 
-'''
+"""
 
 
 class Solution:
@@ -46,12 +46,12 @@ class Solution:
         while i >= m and j <= n:
             p = 0
             for j in range(n + 1):
-                mat[p +d].append(A[i][j])
+                mat[p + d].append(A[i][j])
                 p += 1
             for i in range(m + 1, len(A)):
                 mat[p + d].append(A[i][j])
                 p += 1
-            j=0
+            j = 0
             d += 1
             i = int(d)
             m += 1
@@ -61,8 +61,7 @@ class Solution:
 
 print(Solution().diagonal([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
 
-
-'''
+"""
 Fastest Solution
 
 class Solution:
@@ -74,5 +73,4 @@ class Solution:
             for j in range(len(A)):
                 ans[i+j].append(A[i][j])
         return ans
-
-'''
+"""
