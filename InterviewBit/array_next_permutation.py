@@ -1,4 +1,4 @@
-'''
+"""
 
 https://www.interviewbit.com/problems/next-permutation/
 
@@ -46,8 +46,7 @@ Input 4:
 Output 4:
     [20, 113, 50]
 
-'''
-
+"""
 
 import math
 
@@ -69,10 +68,10 @@ class Solution:
         for i in range(1, len(A)):
             if A[i] < A[i - 1]:
                 c = i
-        if c+1 == len(A):
+        if c + 1 == len(A):
             temp = A[-3]
             A.pop(-3)
-            return A +[temp]
+            return A + [temp]
         mini = math.inf
         mini_i = -1
         for i in range(c + 1, len(A)):
@@ -84,10 +83,9 @@ class Solution:
 
 
 print(Solution().nextPermutation(
-    [1,2,3]))
+    [1, 2, 3]))
 
-
-'''
+"""
 Fastest and Correct Solution
 
 
@@ -108,4 +106,4 @@ Fastest and Correct Solution
         a[i+1:] = reversed(a[i+1:])  
         return a
 
-'''
+"""
