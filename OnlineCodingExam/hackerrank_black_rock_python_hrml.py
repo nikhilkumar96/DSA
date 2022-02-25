@@ -66,8 +66,8 @@ Print the value of the attribute for each query. Print "Not Found!" without quot
 
 """
 
-
 import re
+
 
 def retrace(tag_path, root):
     tag_copy = tag_path[::]
@@ -78,6 +78,7 @@ def retrace(tag_path, root):
         if root[temp] != tag_copy[-1]:
             return False
     return True
+
 
 def main():
     arr = []
@@ -94,7 +95,7 @@ def main():
         if mystack and tag_name in mystack[-1]:
             mystack.pop()
             continue
-        tag_attrib = {attr_name : attr_val for attr_name, attr_val in zip(atrs[::2], atrs[1::2])}
+        tag_attrib = {attr_name: attr_val for attr_name, attr_val in zip(atrs[::2], atrs[1::2])}
 
         tags[tag_name] = tag_attrib
         if not mystack:
@@ -117,5 +118,6 @@ def main():
 
     for item in res:
         print(item)
+
 
 main()
