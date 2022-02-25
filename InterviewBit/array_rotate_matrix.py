@@ -47,7 +47,6 @@ A = [
 
 print(Solution().rotate(A))
 
-
 """
 Fastest Solution 
 
