@@ -1,12 +1,10 @@
 # Enter your code here. Read input from STDIN. Print output to STDOUT
-'''
+"""
 create ROBOT which takes input the commands and gives final output as the position of grid
 
 e.g. [ west_1, south_2]
 
-
-'''
-
+"""
 
 
 class Robo:
@@ -46,6 +44,3 @@ def main():
 
 
 main()
-
-
-
