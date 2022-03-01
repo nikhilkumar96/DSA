@@ -1,4 +1,4 @@
-'''
+"""
 
 https://leetcode.com/discuss/interview-question/1097692/swiggy-sde-2-hackerrank-oa-flexible-strings
 
@@ -35,9 +35,7 @@ a --> d
 Output - NO
 
 
-'''
-
-
+"""
 
 from collections import deque
 
@@ -50,14 +48,15 @@ def flexi(stri, graph):
         temp = myque.popleft()
         if temp in graph.keys():
             for child in graph[temp]:
-                if child in visited.keys() and visited[child] ==0:
-                    visited[child] =1
+                if child in visited.keys() and visited[child] == 0:
+                    visited[child] = 1
                     myque.append(child)
 
-    for k,v in visited.items():
-        if v==0:
+    for k, v in visited.items():
+        if v == 0:
             return 'NO'
     return 'YES'
+
 
 def main():
     t = int(input())
