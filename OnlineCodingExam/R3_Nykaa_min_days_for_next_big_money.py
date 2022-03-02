@@ -1,4 +1,5 @@
 """
+
 https://leetcode.com/problems/daily-temperatures/solution/
 
 Given an array of coins that represent the daily money a child receives from the parent to put in the piggy bank,
