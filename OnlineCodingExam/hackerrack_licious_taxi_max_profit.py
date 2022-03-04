@@ -1,4 +1,5 @@
 """
+
 https://leetcode.com/problems/maximum-earnings-from-taxi/
 
 There are n points on a road you are driving your taxi on. The n points on the road are labeled from 1 to n in the
