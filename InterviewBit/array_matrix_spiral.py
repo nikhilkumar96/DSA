@@ -1,4 +1,5 @@
 """
+
 https://www.interviewbit.com/problems/spiral-order-matrix-ii/
 
 Given an integer A, generate a square matrix filled with elements from 1 to A2 in spiral order.
@@ -32,8 +33,6 @@ Output 2:
         [12, 13, 14, 5],
         [11, 16, 15, 6],
         [10, 9, 8, 7]   ]
-
-
 
 """
 
