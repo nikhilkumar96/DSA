@@ -1,54 +1,78 @@
 import math
-
-class Node:
-    def __init__(self, value):
-        self.val = value
-        self.next = None
-        self.prev = None
-
+from collections import OrderedDict
 
 class LRUCache:
 
-    def __init__(self, capacity: int):
+    def __init__(self, capacity):
         self.capacity = capacity
-        self.head = Node(0)
-        self.tail = Node(math.inf)
-        self.head.next = self.tail
-        self.tail.prev = self.head
-        self.cache = {}
-
-    def add_node_in_end(self, value):
-        new_node = Node(value)
-        new_node.prev = self.tail.prev
-        self.tail.prev.next = new_node
-        new_node.next = self.tail
-        self.tail.prev = new_node
-        return new_node
-
-    def delete_node(self, del_node):
-        value = del_node.val
-        del_node.prev.next = del_node.next
-        del_node.next.prev = del_node.prev
-        del del_node
-        return value
+        self.cache = OrderedDict()
 
     def get(self, key: int) -> int:
-        node = self.cache.get(key)
-        if node:
-            self.delete_node(node)
-            new_node = self.add_node_in_end(node.val)
-            self.cache[key] = new_node
-            return node.val[1]
+        if key in self.cache:
+            self.cache.move_to_end(key)
+            return self.cache[key]
         return -1
 
-    def put(self, key: int, value: int) -> None:
-        existing_node = self.cache.get(key)
-        if existing_node:
-            self.delete_node(existing_node)
-        elif len(self.cache) == self.capacity:
-            del self.cache[self.delete_node(self.head.next)[0]]
 
-        self.cache[key] = self.add_node_in_end([key, value])
+    def put(self, key: int, value: int) -> None:
+        if key in self.cache:
+            self.cache.move_to_end(key)
+        self.cache[key] = value
+        if len(self.cache)>self.capacity:
+            self.cache.popitem(False)
+
+
+
+
+# class Node:
+#     def __init__(self, value):
+#         self.val = value
+#         self.next = None
+#         self.prev = None
+#
+#
+# class LRUCache:
+#
+#     def __init__(self, capacity: int):
+#         self.capacity = capacity
+#         self.head = Node(0)
+#         self.tail = Node(math.inf)
+#         self.head.next = self.tail
+#         self.tail.prev = self.head
+#         self.cache = {}
+#
+#     def add_node_in_end(self, value):
+#         new_node = Node(value)
+#         new_node.prev = self.tail.prev
+#         self.tail.prev.next = new_node
+#         new_node.next = self.tail
+#         self.tail.prev = new_node
+#         return new_node
+#
+#     def delete_node(self, del_node):
+#         value = del_node.val
+#         del_node.prev.next = del_node.next
+#         del_node.next.prev = del_node.prev
+#         del del_node
+#         return value
+#
+#     def get(self, key: int) -> int:
+#         node = self.cache.get(key)
+#         if node:
+#             self.delete_node(node)
+#             new_node = self.add_node_in_end(node.val)
+#             self.cache[key] = new_node
+#             return node.val[1]
+#         return -1
+#
+#     def put(self, key: int, value: int) -> None:
+#         existing_node = self.cache.get(key)
+#         if existing_node:
+#             self.delete_node(existing_node)
+#         elif len(self.cache) == self.capacity:
+#             del self.cache[self.delete_node(self.head.next)[0]]
+#
+#         self.cache[key] = self.add_node_in_end([key, value])
 
 
 
