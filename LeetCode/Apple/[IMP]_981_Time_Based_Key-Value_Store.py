@@ -16,7 +16,7 @@ class TimeMap:
             if timestamp in self.store[key]:
                 return self.store[key][timestamp]
             else:
-                i = self.store[key].bisect_left(timestamp)
+                i = self.store[key].bisect_left(timestamp)     #[IMP]
                 if i:
                     return self.store[key][self.store[key].keys()[i - 1]]
         return ""
