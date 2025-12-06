@@ -1,3 +1,5 @@
+from header import *
+
 class MyHashMap:
 
     def __init__(self):
@@ -29,5 +31,4 @@ b=[[],[1,1],[2,2],[1],[3],[2,1],[2],[2],[2]]
 
 obj = MyHashMap()
 
-for name, args in zip(a[1:], b[1:]):
-    print(getattr(obj, name)(*args))
+func_call_with_two_lists(a,b, obj)

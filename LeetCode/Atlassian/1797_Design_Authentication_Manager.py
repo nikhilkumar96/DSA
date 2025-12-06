@@ -1,3 +1,5 @@
+from header import *
+
 class AuthenticationManager:
 
     def __init__(self, timeToLive: int):
@@ -23,10 +25,4 @@ a = ["AuthenticationManager","renew","generate","countUnexpiredTokens","generate
 b = [[5],["aaa",1],["aaa",2],[6],["bbb",7],["aaa",8],["bbb",10],[15]]
 obj = AuthenticationManager(b[0][0])
 
-for i in range(1, len(a)):
-    if a[i] == "generate":
-        obj.generate(b[i][0], b[i][1])
-    elif a[i] == "renew":
-        obj.renew(b[i][0], b[i][1])
-    elif a[i] == "countUnexpiredTokens":
-        print(obj.countUnexpiredTokens(b[i][0]))
+func_call_with_two_lists(a,b,obj)
