@@ -9,7 +9,7 @@ class LRUCache:
 
     def get(self, key: int) -> int:
         if key in self.cache:
-            self.cache.move_to_end(key)
+            self.cache.move_to_end(key)    # [IMP]
             return self.cache[key]
         return -1
 
@@ -19,7 +19,7 @@ class LRUCache:
             self.cache.move_to_end(key)
         self.cache[key] = value
         if len(self.cache)>self.capacity:
-            self.cache.popitem(False)
+            self.cache.popitem(False)      # [IMP]
 
 
 

@@ -3,11 +3,16 @@ from collections import deque
 
 class Solution:
     def rotate(self, matrix: List[List[int]]) -> None:
-        n = len(matrix)
-        for i in range(n):
-            for j in range(i+1, n):
-                matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
-            matrix[i].reverse()   #[IMP]
+        matrix[:] = list(zip(*matrix))                       # [IMP]
+        matrix[:] = [i[::-1] for i in matrix]
+
+# class Solution:
+#     def rotate(self, matrix: List[List[int]]) -> None:
+#         n = len(matrix)
+#         for i in range(n):
+#             for j in range(i+1, n):
+#                 matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+#             matrix[i].reverse()   #[IMP]
 
 
 # class Solution:
