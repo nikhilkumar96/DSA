@@ -14,3 +14,8 @@ class Solution:
 # print(Solution().maxProfit([3,3,5,0,0,3,1,4]))
 # print(Solution().maxProfit([2,4,1]))
 print(Solution().maxProfit([3,2,6,5,0,3]))
+
+# hold1 → Maximum profit after buying 1st stock
+# release1 → Maximum profit after selling 1st stock
+# hold2 → Maximum profit after buying 2nd stock
+# release2 → Maximum profit after selling 2nd stock (final answer)
