@@ -1,6 +1,7 @@
 from typing import Optional, List, DefaultDict
 from collections import Counter, OrderedDict, deque
 from sortedcontainers import SortedDict, SortedList
+from bisect import bisect_right, insort_right
 from itertools import permutations
 from copy import copy
 import heapq, math, statistics, random
